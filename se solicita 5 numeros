@@ -1,0 +1,46 @@
+def verificar_orden(numeros):
+    creciente = True
+    decreciente = True
+    
+    for i in range(len(numeros) - 1):  
+        if numeros[i] > numeros[i + 1]:
+            creciente = False
+        if numeros[i] < numeros[i + 1]:
+            decreciente = False
+    
+    if creciente:
+        return "Los números están en orden creciente."
+    elif decreciente:
+        return "Los números están en orden decreciente."
+    else:
+        return "Los números están desordenados."
+
+# Solicitar al usuario que ingrese 5 números
+numeros = []
+for i in range(5):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+# Verificar el orden de los números e imprimir el resultado
+print(verificar_orden(numeros))
+
+Ingrese el número 1: 2  
+Ingrese el número 2: 4  
+Ingrese el número 3: 6  
+Ingrese el número 4: 8  
+Ingrese el número 5: 10  
+Los números están en orden creciente.
+
+Ingrese el número 1: 10  
+Ingrese el número 2: 8  
+Ingrese el número 3: 6  
+Ingrese el número 4: 4  
+Ingrese el número 5: 2  
+Los números están en orden decreciente.
+
+Ingrese el número 1: 5  
+Ingrese el número 2: 3  
+Ingrese el número 3: 8  
+Ingrese el número 4: 1  
+Ingrese el número 5: 9  
+Los números están desordenados.
